@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dotnetmvc_demoModelStoreContainer" CdmEntityContainer="dotnetmvc_demoEntities">
+    <EntitySetMapping Name="customers">
+      <EntityTypeMapping TypeName="dotnetmvc_demoModel.customer">
+        <MappingFragment StoreEntitySet="customer">
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customer_details">
+      <EntityTypeMapping TypeName="dotnetmvc_demoModel.customer_details">
+        <MappingFragment StoreEntitySet="customer_details">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="customerId" ColumnName="customerId" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+          <ScalarProperty Name="Phonenumber" ColumnName="Phonenumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
