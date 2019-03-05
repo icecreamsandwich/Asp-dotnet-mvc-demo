@@ -10,5 +10,6 @@ namespace WebApplication6.Models
         public int CustomerId { get; set; }
         public string Name { get; set; }
         public string Country { get; set; }
+        public IEnumerable<customer> customers { get; set; }
     }
 }

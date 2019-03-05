@@ -25,7 +25,17 @@
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Lorem Index", "Index", "Lorem")</li>
                     <li>@Html.ActionLink("Lorem Privacy", "Privacy", "Lorem")</li>
-                    <li>@Html.ActionLink("Add Customer", "Index", "Customer")</li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Customer
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Add Customer", "Index", "Customer")</li>
+                            <li>@Html.ActionLink("List", "List", "Customer")</li>
+                        </ul>
+                    </li>
+                    
                 </ul>
             </div>
         </div>
