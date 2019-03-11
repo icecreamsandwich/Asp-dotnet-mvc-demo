@@ -95,3 +95,4 @@ C:\Users\munee\source\repos\WebApplication6\WebApplication6\bin\WebMatrix.Data.x
 C:\Users\munee\source\repos\WebApplication6\WebApplication6\bin\WebMatrix.WebData.xml
 C:\Users\munee\source\repos\WebApplication6\WebApplication6\bin\MySql.Data.EntityFramework.dll
 C:\Users\munee\source\repos\WebApplication6\WebApplication6\bin\MySql.Data.EntityFramework.xml
+C:\Users\munee\source\repos\WebApplication6\WebApplication6\obj\Debug\WebApplication6.csprojAssemblyReference.cache

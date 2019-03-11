@@ -12,6 +12,7 @@ namespace WebApplication6.Controllers
 {
     public class CustomerController : Controller
     {
+        private dotnetmvc_demoEntities context = new dotnetmvc_demoEntities();
         // GET: Home
         public ActionResult Index()
         {
@@ -21,7 +22,7 @@ namespace WebApplication6.Controllers
         // GET: Detsils of  Customers
         public ActionResult List()
         {
-            var context = new dotnetmvc_demoEntities();
+            //var context = new dotnetmvc_demoEntities();
             return View(context.customers.ToList());
         }
         
@@ -32,7 +33,7 @@ namespace WebApplication6.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var context = new dotnetmvc_demoEntities();
+            //var context = new dotnetmvc_demoEntities();
             var customer = context.customers.Find(id);
             if (customer == null)
             {
@@ -48,7 +49,7 @@ namespace WebApplication6.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var context = new dotnetmvc_demoEntities();
+            //var context = new dotnetmvc_demoEntities();
             var customer = context.customers.Find(id);
             if (customer == null)
             {
@@ -67,7 +68,7 @@ namespace WebApplication6.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var context = new dotnetmvc_demoEntities();
+          //  var context = new dotnetmvc_demoEntities();
             var customerToUpdate = context.customers.Find(id);
             if (TryUpdateModel(customerToUpdate, "",
                new string[] { "Name", "Country", "CustomerId" }))
@@ -100,6 +101,35 @@ namespace WebApplication6.Controllers
             }
             return View("Index");
 
+        }
+
+        // GET: Customer/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+        //    var context = new dotnetmvc_demoEntities();
+            var customer = context.customers.Find(id);
+            if (customer == null)
+            {
+                return HttpNotFound();
+            }
+            return View(customer);
+        }
+
+        // POST: Customer/Delete/5 delete a specific customer
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+        //    var context = new dotnetmvc_demoEntities();
+            var customer = context.customers.Find(id);
+            context.customers.Remove(customer);
+            context.SaveChanges();
+            return RedirectToAction("List");
         }
     }
 }
